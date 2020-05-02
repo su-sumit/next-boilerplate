@@ -1,12 +1,13 @@
-import Head from 'next/head'
-import styled from '@emotion/styled'
+import Head from 'next/head';
+import styled from '@emotion/styled';
 
 const Banner = styled('div')`
   background: black;
   color: white;
-`
+  box-sizing: broder-box;
+`;
 
-export default function Home() {
+export default function Home(): JSX.Element {
   return (
     <div className="container">
       <Head>
@@ -15,14 +16,11 @@ export default function Home() {
       </Head>
 
       <main>
-        <Banner>
-          Hey there
-        </Banner>
+        <Banner>Hey there</Banner>
       </main>
 
-      <footer>
-      </footer>
-
+      {/* <footer>
+      </footer> */}
     </div>
-  )
+  );
 }
