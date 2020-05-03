@@ -4,9 +4,6 @@ name: Intergration
 
 on:
   push:
-    branches:
-      - dev
-  pull_request:
     branches: [master, dev]
 
 jobs:
