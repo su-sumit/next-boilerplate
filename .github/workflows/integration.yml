@@ -11,7 +11,7 @@ on:
 
 jobs:
   build:
-    name: "test and build"
+    name: 'test and build'
     runs-on: ubuntu-latest
 
     steps:
@@ -19,7 +19,7 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v1
         with:
-          node-version: "12.x"
+          node-version: '12.x'
 
       - name: Cache Node.js modules
         uses: actions/cache@v1
@@ -35,7 +35,3 @@ jobs:
 
       - name: test
         run: yarn test
-
-        if: github.ref == 'refs/heads/master'
-      - name: build
-        run: yarn build --if-present
