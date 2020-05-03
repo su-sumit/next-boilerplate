@@ -4,7 +4,9 @@ name: Intergration
 
 on:
   push:
-    branches: [dev, master]
+    branches: -dev
+  pull-request:
+    branches: [master, dev]
 
 jobs:
   build:
@@ -30,8 +32,9 @@ jobs:
       - name: Install dependencies
         run: yarn --frozen-lockfile
 
-      - name: build
-        run: yarn build --if-present
-
       - name: test
         run: yarn test
+
+      if: github.ref == 'refs/heads/master'
+      - name: build
+        run: yarn build --if-present
