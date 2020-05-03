@@ -46,7 +46,7 @@ const Headline = styled.h1`
   animation: ${suspense} 1s ease-in-out 1;
 `;
 
-const Hand = styled.i`
+const Hand = styled.span`
   display: inline-block;
   transform-origin: 70% 70%;
   animation: ${wave} 2.5s ease-in 2s infinite;
