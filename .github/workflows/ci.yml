@@ -1,14 +1,14 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests
 
-name: Intergration
+name: ci
 
 on:
   push:
     branches: [master, dev]
 
 jobs:
-  build:
-    name: 'test and build'
+  test:
+    name: 'test and build' # todo: build is still done on server
     runs-on: ubuntu-latest
 
     steps:
@@ -34,6 +34,7 @@ jobs:
         run: yarn test
 
   deploy:
+    needs: [test]
     name: 'Deploy to Vercel'
     runs-on: ubuntu-latest
     if: github.event_name == 'push' && github.ref == 'refs/heads/master'
